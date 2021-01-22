@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-
+const port = process.env.PORT || 3030;
 var cors = require('cors')
 app.use(cors())
 
@@ -11,4 +11,8 @@ app.use(bodyParser.json());
 const { ADD_TASK } = require('./20')
 app.post('/', ADD_TASK)
 
-app.listen(3001)
+app.get("/", (req, res) => {
+    res.send("Hello World");
+});
+
+app.listen(port)
