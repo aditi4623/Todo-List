@@ -11,6 +11,9 @@ app.use(bodyParser.json());
 const { ADD_TASK } = require('./20')
 app.post('/', ADD_TASK)
 
+const { DELETE_TASK } = require('./20')
+app.delete('/', DELETE_TASK)
+
 app.get("/", (req, res) => {
     res.send("Hello World");
 });
